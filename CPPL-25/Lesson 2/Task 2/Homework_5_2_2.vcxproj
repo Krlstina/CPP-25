@@ -137,6 +137,9 @@
   <ItemGroup>
     <ClCompile Include="Homework_5_2_2.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="smart_array.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
