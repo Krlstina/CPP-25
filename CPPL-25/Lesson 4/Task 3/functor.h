@@ -6,26 +6,22 @@
 class Functor
 {
 public:
-	Functor(std::vector<int>& arr) : _arr{arr}, _counter{0}	{}
+	Functor() {}
 
-	int get_sum() {
-		int sum{};
+    void operator()(int x)
+    {
+        if (x % 3 == 0) {
+            sum += x;
+            _counter += 1;
+        }
+    }
 
-		for (int i : _arr)	{
-			if (i % 3 == 0) {
-				sum += i;
-				_counter += 1;
-			}
-		}
-
-		return sum;
-	}
-
-	int get_count() { return _counter; }
+    int get_sum() const { return sum; }
+    int get_count() const { return _counter; }
 
 private:
-	std::vector<int> _arr{};
 	int _counter{};
+	int sum{};
 };
 
 

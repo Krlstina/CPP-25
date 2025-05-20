@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "Windows.h"
 #include <vector>
+#include <algorithm>
 #include "functor.h"
 
 int main()
@@ -8,6 +9,8 @@ int main()
 	setlocale(LC_ALL, "rus");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+
+	Functor func;
 
 	std::vector<int> vec{ 3, 23, -5, 90, 7 };
 
@@ -18,7 +21,8 @@ int main()
 	}
 	std::cout << std::endl;
 
-	Functor func = vec;
+	func = std::for_each(vec.begin(), vec.end(), func);
+
 	std::cout << "[OUT]: get_sum() = " << func.get_sum() << std::endl;
 	std::cout << "[OUT]: get_count() = " << func.get_count() << std::endl;
 
